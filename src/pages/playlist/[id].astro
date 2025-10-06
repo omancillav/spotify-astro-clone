@@ -1,0 +1,21 @@
+---
+import { allPlaylists, songs } from "@/lib/data";
+import Layout from "@/layouts/Layout.astro";
+import PlaylistItemCard from "@/components/PlaylistItemCard.astro";
+
+const { id } = Astro.params;
+
+const playlist = allPlaylists.find((playlist) => playlist.id === id);
+const playlistSongs = songs.filter((song) => song.albumId === playlist?.albumId);
+---
+
+<Layout title={playlist?.title}>
+  <div id="playlist-container" class="relative transition-all duration-1000 bg-green-600">
+    <!-- pageHeader -->
+    <div class="relative z-10 px-6 pt-10"></div>
+
+    <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 to-zinc-900/80"></div>
+  </div>
+</Layout>
+
+---

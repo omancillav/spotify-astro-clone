@@ -17,7 +17,7 @@ const artistString = artists.join(", ");
     shadow-lg hover:shadow-xl bg-zinc-500/30 w-44 flex-col"
 >
   <picture class="aspect-square w-full flex-none">
-    <img src={cover} alt={title} class="object-cover w-full h-full rounded-md" />
+    <img src={cover} alt={title} class="object-cover w-full h-full rounded-md" transition:name=`playlist ${id} image` />
   </picture>
 
   <div class="flex flex-auto flex-col truncate items-start text-start w-full">

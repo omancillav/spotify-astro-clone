@@ -10,12 +10,24 @@ const playlistSongs = songs.filter((song) => song.albumId === playlist?.albumId)
 ---
 
 <Layout title={playlist?.title}>
-  <div id="playlist-container" class="relative transition-all duration-1000 bg-green-600">
+  <div
+    id="playlist-container"
+    class="relative flex flex-col h-full overflow-x-hidden bg-zinc-900 p-4"
+    transition:name=`playlist ${id} box`
+  >
+    <header class="flex flex-col gap-8">
+      <picture class="aspect-square w-52 h-52 flex-none">
+        <img
+          src={playlist?.cover}
+          alt={playlist?.title}
+          class="object-cover w-full h-full rounded-md"
+          transition:name=`playlist ${playlist?.id} image`
+        />
+      </picture>
+    </header>
     <!-- pageHeader -->
     <div class="relative z-10 px-6 pt-10"></div>
 
-    <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 to-zinc-900/80"></div>
+    <!-- <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 to-zinc-900/80"></div> -->
   </div>
 </Layout>
-
----

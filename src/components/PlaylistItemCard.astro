@@ -22,7 +22,7 @@ const artistString = artists.join(", ");
   </picture>
 
   <div class="flex flex-auto flex-col truncate items-start text-start w-full">
-    <h4 class="text-white text-sm">{title}</h4>
-    <span class="text-xs text-zinc-400">{artistString}</span>
+    <h4 class="text-white text-sm" transition:name=`playlist ${playlist?.id} title`>{title}</h4>
+    <span class="text-xs text-zinc-400" transition:name=`playlist ${playlist?.id} artists`>{artistString}</span>
   </div>
 </a>
